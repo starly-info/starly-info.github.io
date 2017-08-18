@@ -1,0 +1,18 @@
+************************
+Vim Help File Newsletter
+************************
+
+`Vim <http://www.vim.org/>`_'s help file.
+
+Subscribers receive periodically an old style text email with only a portion of
+the help file, and nothing else.
+
+These little pills of Vim knowledge:
+
+* can be helpful to every users from beginner to advanced;
+* avoid users from reinventing the wheel, write plugins for functionalities
+  already covered;
+* help you digest a very long text one bit of a time.
+
+
+You can read the help `licence <http://vimdoc.sourceforge.net/htmldoc/uganda.html>`_.
