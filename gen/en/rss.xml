@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>starly</title>
+        <link>http://starly.info</link>
+        <description><![CDATA[Starly available newsletters]]></description>
+        <atom:link href="http://starly.info/gen/en/rss.xml" rel="self"
+                   type="application/rss+xml" />
+        <lastBuildDate>Fri, 18 Aug 2017 00:00:00 UT</lastBuildDate>
+        <item>
+    <title>2017-08-18-vim</title>
+    <link>http://starly.info/newsletter/en/2017-08-18-vim.html</link>
+    <description><![CDATA[<h1 id="vim-help-file-newsletter">Vim Help File Newsletter</h1>
+<p><a href="http://www.vim.org/">Vim</a>’s help file.</p>
+<p>Subscribers receive periodically an old style text email with only a portion of the help file, and nothing else.</p>
+<p>These little pills of Vim knowledge:</p>
+<ul>
+<li>can be helpful to every users from beginner to advanced;</li>
+<li>avoid users from reinventing the wheel, write plugins for functionalities already covered;</li>
+<li>help you digest a very long text one bit of a time.</li>
+</ul>
+<p>You can read the help <a href="http://vimdoc.sourceforge.net/htmldoc/uganda.html">licence</a>.</p>]]></description>
+    <pubDate>Fri, 18 Aug 2017 00:00:00 UT</pubDate>
+    <guid>http://starly.info/newsletter/en/2017-08-18-vim.html</guid>
+    <dc:creator>Giacomo Mantani</dc:creator>
+</item>
+
+    </channel>
+</rss>

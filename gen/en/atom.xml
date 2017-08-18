@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>starly</title>
+    <link href="http://starly.info/gen/en/atom.xml" rel="self" />
+    <link href="http://starly.info" />
+    <id>http://starly.info/gen/en/atom.xml</id>
+    <author>
+        <name>Giacomo Mantani</name>
+        <email>name.surname on gmail</email>
+    </author>
+    <updated>2017-08-18T00:00:00Z</updated>
+    <entry>
+    <title>2017-08-18-vim</title>
+    <link href="http://starly.info/newsletter/en/2017-08-18-vim.html" />
+    <id>http://starly.info/newsletter/en/2017-08-18-vim.html</id>
+    <published>2017-08-18T00:00:00Z</published>
+    <updated>2017-08-18T00:00:00Z</updated>
+    <summary type="html"><![CDATA[<h1 id="vim-help-file-newsletter">Vim Help File Newsletter</h1>
+<p><a href="http://www.vim.org/">Vim</a>’s help file.</p>
+<p>Subscribers receive periodically an old style text email with only a portion of the help file, and nothing else.</p>
+<p>These little pills of Vim knowledge:</p>
+<ul>
+<li>can be helpful to every users from beginner to advanced;</li>
+<li>avoid users from reinventing the wheel, write plugins for functionalities already covered;</li>
+<li>help you digest a very long text one bit of a time.</li>
+</ul>
+<p>You can read the help <a href="http://vimdoc.sourceforge.net/htmldoc/uganda.html">licence</a>.</p>]]></summary>
+</entry>
+
+</feed>
