@@ -17,7 +17,12 @@
     <updated>2017-08-18T00:00:00Z</updated>
     <summary type="html"><![CDATA[<h1 id="vim-help-file-newsletter">Vim Help File Newsletter</h1>
 <p><a href="http://www.vim.org/">Vim</a>’s help file.</p>
-<p>Subscribers receive periodically an old style text email with only a portion of the help file, and nothing else.</p>
+<p>Subscribers receive an email daily with:</p>
+<ul>
+<li><strong>Theory</strong>: a portion of the help file (time to read: &lt;3 minutes);</li>
+<li><strong>Practice</strong>: questions to enhance memorization and improve the learning process. <em>Can you get the maximum score?</em></li>
+<li><strong>Help</strong>: answers to questions.</li>
+</ul>
 <p>These little pills of Vim knowledge:</p>
 <ul>
 <li>can be helpful to every users from beginner to advanced;</li>
