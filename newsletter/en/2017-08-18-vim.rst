@@ -4,8 +4,12 @@ Vim Help File Newsletter
 
 `Vim <http://www.vim.org/>`_'s help file.
 
-Subscribers receive periodically an old style text email with only a portion of
-the help file, and nothing else.
+Subscribers receive an email daily with:
+
+* **Theory**: a portion of the help file (time to read: <3 minutes);
+* **Practice**: questions to enhance memorization and improve the learning
+  process. *Can you get the maximum score?*
+* **Help**: answers to questions.
 
 These little pills of Vim knowledge:
 
