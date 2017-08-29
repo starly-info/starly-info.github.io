@@ -6,7 +6,7 @@ Vim Help File Newsletter
 
 Subscribers receive an email daily with:
 
-* **Theory**: a portion of the help file (time to read: <3 minutes);
+* **Theory**: a portion of the help file;
 * **Practice**: questions to enhance memorization and improve the learning
   process. *Can you get the maximum score?*
 * **Help**: answers to questions.
