@@ -1,22 +1,30 @@
-************************
-Vim Help File Newsletter
-************************
+**********************************
+Vi IMproved's Help File Newsletter
+**********************************
 
-`Vim <http://www.vim.org/>`_'s help file.
+`VIM <http://www.vim.org/>`_'s help file is the main source of knowledge about
+VIM and his functionalities. You can access the manual typing `:help` in *NORMAL
+MODE*. If you don't know what *NORMAL MODE* is, subscribe and follow along with
+your daily email :).
 
-Subscribers receive an email daily with:
+Subscribers receive a daily email with:
 
 * **Theory**: a portion of the help file;
 * **Practice**: questions to enhance memorization and improve the learning
-  process. *Can you get the maximum score?*
+  process. *Do you know all the answers?*
 * **Help**: answers to questions.
 
-These little pills of Vim knowledge:
+Motivation behind these little pills of Vim knowledge:
 
 * can be helpful to every users from beginner to advanced;
 * avoid users from reinventing the wheel, write plugins for functionalities
   already covered;
 * help you digest a very long text one bit of a time.
 
+*Have you any questions? Do you find errors? Do you have ideas on how to
+improve the service? Do you know some tricky questions that could be added to
+the practice section?*
 
-You can read the help `licence <http://vimdoc.sourceforge.net/htmldoc/uganda.html>`_.
+You are **welcome** to contact me directly!
+
+You can read the original help's `licence <http://vimdoc.sourceforge.net/htmldoc/uganda.html>`_.
