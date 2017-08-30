@@ -16,12 +16,12 @@ Subscribers receive a daily email with:
 
 Motivation behind these little pills of Vim knowledge:
 
-* can be helpful to every users from beginner to advanced;
+* can be helpful to every user from beginner to advanced;
 * avoid users from reinventing the wheel, write plugins for functionalities
   already covered;
 * help you digest a very long text one bit of a time.
 
-*Have you any questions? Do you find errors? Do you have ideas on how to
+*Do you have any question? Do you find errors? Do you have ideas on how to
 improve the service? Do you know some tricky questions that could be added to
 the practice section?*
 
