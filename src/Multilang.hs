@@ -28,6 +28,12 @@ dbTranslations = M.fromList
   , ("it"      , M.fromList [(English, "Italian" ), (Italian, "Italiano"      )])
   ]
 
+fromStringToLanguage :: String -> Language
+fromStringToLanguage l
+  | l == "it" = Italian
+  | l == "en" = English
+  | otherwise = error "Language not recognised"
+
 getTranslation :: Language -> Key -> Maybe Translation
 getTranslation l k = M.lookup l $ case M.lookup k dbTranslations of
                                     (Just t) -> t

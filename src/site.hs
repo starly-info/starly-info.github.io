@@ -11,7 +11,7 @@ import        System.FilePath.Posix (takeBaseName, takeDirectory, (</>),
                                       splitFileName)
 
 import        Abbreviations         (abbreviationFilter)
-import        Config
+import        Config                (feedConfig)
 import        Multilang
 
 --------------------------------------------------------------------------------
@@ -29,18 +29,19 @@ main = hakyll $ do
     -- Default index page (a version index-LANGUAGE must exist)
     match "index.html" $ indexBehavior English
 
+    create ["sitemap.xml"] sitemapBehavior
 
-    forM_ langs $ \lang -> do
+    forM_ Multilang.langs $ \lang -> do
       let slang = show lang
 
-      match ("about*" .||. "tos*" .||. "privacy*")         $ globalBehavior lang
+      match ("about*" .||. "tos*" .||. "privacy*")        $ globalBehavior     lang
 
       match (fromGlob $ "index-" ++ slang ++ ".html"   )  $ indexBehavior      lang
       match (fromGlob $ "newsletter/" ++ slang ++ "/*" )  $ newsletterBehavior lang
 
-      create [fromFilePath ("gen/" ++ slang ++ "/archive.html")]  (archiveBehavior      lang)
-      create [fromFilePath ("gen/" ++ slang ++ "/rss.xml")]           (feedBehavior renderRss   lang)
-      create [fromFilePath ("gen/" ++ slang ++ "/atom.xml")]          (feedBehavior renderAtom  lang)
+      create [fromFilePath ("gen/" ++ slang ++ "/archive.html")] (archiveBehavior          lang)
+      create [fromFilePath ("gen/" ++ slang ++ "/rss.xml")]      (feedBehavior renderRss   lang)
+      create [fromFilePath ("gen/" ++ slang ++ "/atom.xml")]     (feedBehavior renderAtom  lang)
 
     match "templates/*"         $ compile templateCompiler
     match "templates/*/*.html"  $ compile templateCompiler
@@ -61,16 +62,18 @@ applyFilter transformator s = return $ fmap transformator s
 
 -- replace mappend with mconcat see src/Hakyll/Web/Feed.hs
 languageContext l = map (\ (k, v) -> constField k v)
-                    $ zip (keys dbTranslations) $ mapMaybe (Data.Map.lookup l) (elems dbTranslations)
+                    $ zip (keys Multilang.dbTranslations) $ mapMaybe (Data.Map.lookup l) (elems Multilang.dbTranslations)
 
 postCtx :: Context String
 postCtx =
-    dateField "created" "%d %b %Y" `mappend`
-    modificationTimeField "modified" "%d %b %Y" `mappend`
+    constField "host" "https://starly-info.github.io" `mappend`
+    dateField "created" "%d %b %Y"                    `mappend`
+    modificationTimeField "modified" "%d %b %Y"       `mappend`
     defaultContext
 
 postCtxWithLanguage :: Language -> Context String
 postCtxWithLanguage l = mconcat $ [
+                                    constField "host" "https://starly-info.github.io",
                                     dateField "created" "%d %b %Y",
                                     modificationTimeField "modified" "%d %b %Y",
                                     defaultCtxWithLanguage l
@@ -80,8 +83,9 @@ defaultCtxWithLanguage :: Language -> Context String
 defaultCtxWithLanguage l = mconcat $ languageContext l ++ [defaultContext]
 
 indexCtx l posts = mconcat $ [
+                                constField "lang" l,
                                 listField "posts" postCtx (return posts),
-                                defaultCtxWithLanguage l
+                                defaultCtxWithLanguage (Multilang.fromStringToLanguage l)
                              ]
 
 -- }}}
@@ -111,7 +115,7 @@ indexBehavior l = do
   route idRoute
   compile $ do
       posts <- recentFirst =<< loadAll (fromGlob $ "newsletter/" ++ (show l) ++ "/*")
-      let ctx = indexCtx l posts
+      let ctx = indexCtx (show l) posts
 
       getResourceBody
           >>= applyAsTemplate ctx
@@ -149,7 +153,7 @@ archiveBehavior language = do
     route idRoute
     compile $ do
         posts <- recentFirst =<< loadAll (fromGlob $ "newsletter/" ++ (show language) ++ "/*")
-        let ctx = indexCtx language posts
+        let ctx = indexCtx (show language) posts
 
         makeItem ""
             >>= loadAndApplyTemplate langTemplate ctx
@@ -159,6 +163,21 @@ archiveBehavior language = do
       where
         langTemplate = fromFilePath $ "templates/" ++ (show language) ++ "/archive.html"
 
+sitemapBehavior :: Rules ()
+sitemapBehavior = do
+    route   idRoute
+    compile $ do
+      posts <- recentFirst =<< loadAllSnapshots (fromGlob $ "newsletter/*/*") "content"
+      let ctx = mconcat $ [
+                    listField "posts" postCtx (return posts)
+                 ,  constField "host" "https://starly-info.github.io"
+                 ,  defaultContext
+                 ]
+
+      makeItem ""
+          >>= loadAndApplyTemplate "templates/sitemap.xml" ctx
+          >>= applyFilter abbreviationFilter
+          >>= relativizeUrls
 
 feedBehavior :: (FeedConfiguration
                   -> Context String

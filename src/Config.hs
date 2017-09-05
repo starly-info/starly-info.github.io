@@ -9,5 +9,5 @@ feedConfig lang = FeedConfiguration
   , feedDescription = "Starly available newsletters"
   , feedAuthorName = "Giacomo Mantani"
   , feedAuthorEmail = "name.surname on gmail"
-  , feedRoot = "http://starly.info"
+  , feedRoot = "https://starly-info.github.io"
   }
