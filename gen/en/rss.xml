@@ -3,14 +3,14 @@
     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
         <title>starly</title>
-        <link>http://starly.info</link>
+        <link>https://starly-info.github.io</link>
         <description><![CDATA[Starly available newsletters]]></description>
-        <atom:link href="http://starly.info/gen/en/rss.xml" rel="self"
+        <atom:link href="https://starly-info.github.io/gen/en/rss.xml" rel="self"
                    type="application/rss+xml" />
         <lastBuildDate>Fri, 18 Aug 2017 00:00:00 UT</lastBuildDate>
         <item>
     <title>2017-08-18-vim</title>
-    <link>http://starly.info/newsletter/en/2017-08-18-vim.html</link>
+    <link>https://starly-info.github.io/newsletter/en/2017-08-18-vim.html</link>
     <description><![CDATA[<h1 id="vi-improveds-help-file-newsletter">Vi IMproved’s Help File Newsletter</h1>
 <p><a href="http://www.vim.org/">VIM</a>’s help file is the main source of knowledge about VIM and his functionalities. You can access the manual typing :help in <em>NORMAL MODE</em>. If you don’t know what <em>NORMAL MODE</em> is, subscribe and follow along with your daily email :).</p>
 <p>Subscribers receive a daily email with:</p>
@@ -31,7 +31,7 @@
 <p>You are <strong>welcome</strong> to contact me directly!</p>
 <p>You can read the original help’s <a href="http://vimdoc.sourceforge.net/htmldoc/uganda.html">licence</a>.</p>]]></description>
     <pubDate>Fri, 18 Aug 2017 00:00:00 UT</pubDate>
-    <guid>http://starly.info/newsletter/en/2017-08-18-vim.html</guid>
+    <guid>https://starly-info.github.io/newsletter/en/2017-08-18-vim.html</guid>
     <dc:creator>Giacomo Mantani</dc:creator>
 </item>
 

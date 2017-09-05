@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>starly</title>
-    <link href="http://starly.info/gen/en/atom.xml" rel="self" />
-    <link href="http://starly.info" />
-    <id>http://starly.info/gen/en/atom.xml</id>
+    <link href="https://starly-info.github.io/gen/en/atom.xml" rel="self" />
+    <link href="https://starly-info.github.io" />
+    <id>https://starly-info.github.io/gen/en/atom.xml</id>
     <author>
         <name>Giacomo Mantani</name>
         <email>name.surname on gmail</email>
@@ -11,8 +11,8 @@
     <updated>2017-08-18T00:00:00Z</updated>
     <entry>
     <title>2017-08-18-vim</title>
-    <link href="http://starly.info/newsletter/en/2017-08-18-vim.html" />
-    <id>http://starly.info/newsletter/en/2017-08-18-vim.html</id>
+    <link href="https://starly-info.github.io/newsletter/en/2017-08-18-vim.html" />
+    <id>https://starly-info.github.io/newsletter/en/2017-08-18-vim.html</id>
     <published>2017-08-18T00:00:00Z</published>
     <updated>2017-08-18T00:00:00Z</updated>
     <summary type="html"><![CDATA[<h1 id="vi-improveds-help-file-newsletter">Vi IMproved’s Help File Newsletter</h1>

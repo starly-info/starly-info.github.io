@@ -3,9 +3,9 @@
     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
         <title>starly</title>
-        <link>http://starly.info</link>
+        <link>https://starly-info.github.io</link>
         <description><![CDATA[Starly available newsletters]]></description>
-        <atom:link href="http://starly.info/gen/it/rss.xml" rel="self"
+        <atom:link href="https://starly-info.github.io/gen/it/rss.xml" rel="self"
                    type="application/rss+xml" />
         <lastBuildDate>Unknown</lastBuildDate>
         
