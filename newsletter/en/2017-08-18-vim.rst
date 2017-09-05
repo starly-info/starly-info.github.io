@@ -23,7 +23,7 @@ Motivation behind these little pills of Vim knowledge:
 
 How it looks:
 
-.. image:: https://photos-3.dropbox.com/t/2/AADO3bXmSoe7TxENgJjukrRTAXUniTn64XdCaLWoh284Xw/12/18619325/png/32x32/1/_/1/2/looks.png/EMmu8A0YyeYJIAIoAg/9uMWG3iWKVnllaProNkQzxH1KymDZK6LeuHgSpH8k1s?size=2048x1536&size_mode=2
+.. image:: https://www.dropbox.com/s/ks1wsmapah833uz/looks.png?raw=1
 
 *Do you have any question? Do you find errors? Do you have ideas on how to
 improve the service? Do you know some tricky questions that could be added to
