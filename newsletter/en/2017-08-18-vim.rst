@@ -5,7 +5,7 @@ Vi IMproved's Help File Newsletter
 `VIM <http://www.vim.org/>`_'s help file is the main source of knowledge about
 VIM and his functionalities. You can access the manual typing `:help` in *NORMAL
 MODE*. If you don't know what *NORMAL MODE* is, subscribe and follow along with
-your daily email :).
+your daily email.
 
 Subscribers receive a daily email with:
 
@@ -31,4 +31,4 @@ the practice section?*
 
 You are **welcome** to contact me directly!
 
-You can read the original help's `licence <http://vimdoc.sourceforge.net/htmldoc/uganda.html>`_.
+Original help license `here <http://vimdoc.sourceforge.net/htmldoc/uganda.html>`_.
