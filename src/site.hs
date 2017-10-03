@@ -66,6 +66,7 @@ languageContext l = map (\ (k, v) -> constField k v)
 
 postCtx :: Context String
 postCtx =
+    titleNoDateField "titleNoDate"                    `mappend`
     constField "host" "https://starly-info.github.io" `mappend`
     dateField "created" "%d %b %Y"                    `mappend`
     modificationTimeField "modified" "%d %b %Y"       `mappend`
@@ -73,6 +74,7 @@ postCtx =
 
 postCtxWithLanguage :: Language -> Context String
 postCtxWithLanguage l = mconcat $ [
+                                    titleNoDateField "titleNoDateField",
                                     constField "host" "https://starly-info.github.io",
                                     dateField "created" "%d %b %Y",
                                     modificationTimeField "modified" "%d %b %Y",
@@ -82,11 +84,24 @@ postCtxWithLanguage l = mconcat $ [
 defaultCtxWithLanguage :: Language -> Context String
 defaultCtxWithLanguage l = mconcat $ languageContext l ++ [defaultContext]
 
+titleNoDateField :: String -> Context a
+titleNoDateField = mapContext removeDate . pathField
+
 indexCtx l posts = mconcat $ [
+                                titleNoDateField "titleNoDate",
                                 constField "lang" l,
                                 listField "posts" postCtx (return posts),
                                 defaultCtxWithLanguage (Multilang.fromStringToLanguage l)
                              ]
+
+removeDate :: String -> String
+removeDate i = removeDate' 0 (takeBaseName i)
+  where removeDate' :: Int -> String -> String
+        removeDate' 3 s = s
+        removeDate' _ [] = ""
+        removeDate' acc (x:xs)
+          | x == '-'  = removeDate' (acc+1) xs
+          | otherwise = removeDate' acc xs
 
 -- }}}
 
