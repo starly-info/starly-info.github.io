@@ -37,7 +37,7 @@ main = hakyll $ do
       match ("about*" .||. "tos*" .||. "privacy*")        $ globalBehavior     lang
 
       match (fromGlob $ "index-" ++ slang ++ ".html"   )  $ indexBehavior      lang
-      match (fromGlob $ "newsletter/" ++ slang ++ "/*" )  $ newsletterBehavior lang
+      match (fromGlob $ "course/" ++ slang ++ "/*" )  $ courseBehavior lang
 
       create [fromFilePath ("gen/" ++ slang ++ "/archive.html")] (archiveBehavior          lang)
       create [fromFilePath ("gen/" ++ slang ++ "/rss.xml")]      (feedBehavior renderRss   lang)
@@ -129,7 +129,7 @@ indexBehavior :: Language -> Rules ()
 indexBehavior l = do
   route idRoute
   compile $ do
-      posts <- recentFirst =<< loadAll (fromGlob $ "newsletter/" ++ (show l) ++ "/*")
+      posts <- recentFirst =<< loadAll (fromGlob $ "course/" ++ (show l) ++ "/*")
       let ctx = indexCtx (show l) posts
 
       getResourceBody
@@ -138,8 +138,8 @@ indexBehavior l = do
           >>= applyFilter abbreviationFilter
           >>= relativizeUrls
 
-newsletterBehavior :: Language -> Rules ()
-newsletterBehavior l = do
+courseBehavior :: Language -> Rules ()
+courseBehavior l = do
   route   $ setExtension "html"
   compile $ pandocCompilerWith withLinkAtt defaultHakyllWriterOptions
       >>= saveSnapshot "content"
@@ -167,7 +167,7 @@ archiveBehavior :: Language -> Rules ()
 archiveBehavior language = do
     route idRoute
     compile $ do
-        posts <- recentFirst =<< loadAll (fromGlob $ "newsletter/" ++ (show language) ++ "/*")
+        posts <- recentFirst =<< loadAll (fromGlob $ "course/" ++ (show language) ++ "/*")
         let ctx = indexCtx (show language) posts
 
         makeItem ""
@@ -182,7 +182,7 @@ sitemapBehavior :: Rules ()
 sitemapBehavior = do
     route   idRoute
     compile $ do
-      posts <- recentFirst =<< loadAllSnapshots (fromGlob $ "newsletter/*/*") "content"
+      posts <- recentFirst =<< loadAllSnapshots (fromGlob $ "course/*/*") "content"
       let ctx = mconcat $ [
                     listField "posts" postCtx (return posts)
                  ,  constField "host" "https://starly-info.github.io"
@@ -201,7 +201,7 @@ feedBehavior :: (FeedConfiguration
 feedBehavior render language = do
     route idRoute
     compile $
-        loadAllSnapshots (fromGlob $ "newsletter/" ++ (show language) ++ "/*") "content"
+        loadAllSnapshots (fromGlob $ "course/" ++ (show language) ++ "/*") "content"
         >>= fmap (take 10) . recentFirst
         >>= mapM (applyFilter (protectCDATA . abbreviationFilter))
         >>= render (feedConfig language) feedCtx

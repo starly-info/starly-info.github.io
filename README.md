@@ -1,3 +1,3 @@
 # Star\*ly
 
-A new way of reading big texts.
+A new way of learning big texts.

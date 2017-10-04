@@ -1,11 +1,13 @@
-**********************************
-Vi IMproved's Help File Newsletter
-**********************************
+******************************
+Vi IMproved's Learning Session
+******************************
 
-`VIM <http://www.vim.org/>`_'s help file is the main source of knowledge about
-VIM and his functionalities. You can access the manual typing `:help` in *NORMAL
-MODE*. If you don't know what *NORMAL MODE* is, subscribe and follow along with
-your daily email.
+`VIM <http://www.vim.org/>`_'s help file (`license
+<http://vimdoc.sourceforge.net/htmldoc/uganda.html>`_) is the main source of
+knowledge about VIM and his functionalities. You can access the manual typing
+`:help` in *NORMAL MODE*. If you don't know what *NORMAL MODE* is, subscribe and
+follow along with your daily email. If you do, you will find useful exercises,
+tips and advance knowledge too. **Join end enjoy your FREE contents!**
 
 Subscribers receive a daily email with:
 
@@ -21,14 +23,8 @@ Motivation behind these little pills of Vim knowledge:
   already covered;
 * help you digest a very long text one bit of a time.
 
-How it looks:
-
-.. image:: https://www.dropbox.com/s/ks1wsmapah833uz/looks.png?raw=1
-
 *Do you have any question? Do you find errors? Do you have ideas on how to
 improve the service? Do you know some tricky questions that could be added to
 the practice section?*
 
 You are **welcome** to contact me directly!
-
-Original help license `here <http://vimdoc.sourceforge.net/htmldoc/uganda.html>`_.

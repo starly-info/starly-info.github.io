@@ -1,12 +1,12 @@
 name:               starly
 version:            0.1.0.0
 synopsis:           Big wins come from little things
-description:        Read manuals one step at a time, through our newsletters
+description:        Read manuals one step at a time, through our learning sessions
 homepage:           http://starly.info
-license:            Copyright
+license:            AllRightsReserved
 author:             Giacomo Mantani
 maintainer:         giacomo.mantani@gmail.com
-copyright:          All rights reserved.
+copyright:          Giacomo Mantani
 category:           Web
 build-type:         Simple
 cabal-version:      >= 1.10
