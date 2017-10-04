@@ -4,15 +4,15 @@
     <channel>
         <title>starly</title>
         <link>https://starly-info.github.io</link>
-        <description><![CDATA[Starly available newsletters]]></description>
+        <description><![CDATA[Learning Sessions Available]]></description>
         <atom:link href="https://starly-info.github.io/gen/en/rss.xml" rel="self"
                    type="application/rss+xml" />
         <lastBuildDate>Fri, 18 Aug 2017 00:00:00 UT</lastBuildDate>
         <item>
     <title>2017-08-18-vim</title>
-    <link>https://starly-info.github.io/newsletter/en/2017-08-18-vim.html</link>
-    <description><![CDATA[<h1 id="vi-improveds-help-file-newsletter">Vi IMproved’s Help File Newsletter</h1>
-<p><a href="http://www.vim.org/">VIM</a>’s help file is the main source of knowledge about VIM and his functionalities. You can access the manual typing :help in <em>NORMAL MODE</em>. If you don’t know what <em>NORMAL MODE</em> is, subscribe and follow along with your daily email.</p>
+    <link>https://starly-info.github.io/course/en/2017-08-18-vim.html</link>
+    <description><![CDATA[<h1 id="vi-improveds-learning-session">Vi IMproved’s Learning Session</h1>
+<p><a href="http://www.vim.org/">VIM</a>’s help file (<a href="http://vimdoc.sourceforge.net/htmldoc/uganda.html">license</a>) is the main source of knowledge about VIM and his functionalities. You can access the manual typing :help in <em>NORMAL MODE</em>. If you don’t know what <em>NORMAL MODE</em> is, subscribe and follow along with your daily email. If you do, you will find useful exercises, tips and advance knowledge too. <strong>Join end enjoy your FREE contents!</strong></p>
 <p>Subscribers receive a daily email with:</p>
 <ul>
 <li><strong>Theory</strong>: a portion of the help file;</li>
@@ -25,13 +25,10 @@
 <li>avoid users from reinventing the wheel, write plugins for functionalities already covered;</li>
 <li>help you digest a very long text one bit of a time.</li>
 </ul>
-<p>How it looks:</p>
-<p><img src="https://www.dropbox.com/s/ks1wsmapah833uz/looks.png?raw=1" alt="image" /></p>
 <p><em>Do you have any question? Do you find errors? Do you have ideas on how to improve the service? Do you know some tricky questions that could be added to the practice section?</em></p>
-<p>You are <strong>welcome</strong> to contact me directly!</p>
-<p>Original help license <a href="http://vimdoc.sourceforge.net/htmldoc/uganda.html">here</a>.</p>]]></description>
+<p>You are <strong>welcome</strong> to contact me directly!</p>]]></description>
     <pubDate>Fri, 18 Aug 2017 00:00:00 UT</pubDate>
-    <guid>https://starly-info.github.io/newsletter/en/2017-08-18-vim.html</guid>
+    <guid>https://starly-info.github.io/course/en/2017-08-18-vim.html</guid>
     <dc:creator>Giacomo Mantani</dc:creator>
 </item>
 

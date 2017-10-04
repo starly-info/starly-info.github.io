@@ -6,17 +6,17 @@
     <id>https://starly-info.github.io/gen/en/atom.xml</id>
     <author>
         <name>Giacomo Mantani</name>
-        <email>name.surname on gmail</email>
+        <email>name.surname at gmail</email>
     </author>
     <updated>2017-08-18T00:00:00Z</updated>
     <entry>
     <title>2017-08-18-vim</title>
-    <link href="https://starly-info.github.io/newsletter/en/2017-08-18-vim.html" />
-    <id>https://starly-info.github.io/newsletter/en/2017-08-18-vim.html</id>
+    <link href="https://starly-info.github.io/course/en/2017-08-18-vim.html" />
+    <id>https://starly-info.github.io/course/en/2017-08-18-vim.html</id>
     <published>2017-08-18T00:00:00Z</published>
     <updated>2017-08-18T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<h1 id="vi-improveds-help-file-newsletter">Vi IMproved’s Help File Newsletter</h1>
-<p><a href="http://www.vim.org/">VIM</a>’s help file is the main source of knowledge about VIM and his functionalities. You can access the manual typing :help in <em>NORMAL MODE</em>. If you don’t know what <em>NORMAL MODE</em> is, subscribe and follow along with your daily email.</p>
+    <summary type="html"><![CDATA[<h1 id="vi-improveds-learning-session">Vi IMproved’s Learning Session</h1>
+<p><a href="http://www.vim.org/">VIM</a>’s help file (<a href="http://vimdoc.sourceforge.net/htmldoc/uganda.html">license</a>) is the main source of knowledge about VIM and his functionalities. You can access the manual typing :help in <em>NORMAL MODE</em>. If you don’t know what <em>NORMAL MODE</em> is, subscribe and follow along with your daily email. If you do, you will find useful exercises, tips and advance knowledge too. <strong>Join end enjoy your FREE contents!</strong></p>
 <p>Subscribers receive a daily email with:</p>
 <ul>
 <li><strong>Theory</strong>: a portion of the help file;</li>
@@ -29,11 +29,8 @@
 <li>avoid users from reinventing the wheel, write plugins for functionalities already covered;</li>
 <li>help you digest a very long text one bit of a time.</li>
 </ul>
-<p>How it looks:</p>
-<p><img src="https://www.dropbox.com/s/ks1wsmapah833uz/looks.png?raw=1" alt="image" /></p>
 <p><em>Do you have any question? Do you find errors? Do you have ideas on how to improve the service? Do you know some tricky questions that could be added to the practice section?</em></p>
-<p>You are <strong>welcome</strong> to contact me directly!</p>
-<p>Original help license <a href="http://vimdoc.sourceforge.net/htmldoc/uganda.html">here</a>.</p>]]></summary>
+<p>You are <strong>welcome</strong> to contact me directly!</p>]]></summary>
 </entry>
 
 </feed>

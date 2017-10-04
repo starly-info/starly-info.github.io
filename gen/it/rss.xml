@@ -4,7 +4,7 @@
     <channel>
         <title>starly</title>
         <link>https://starly-info.github.io</link>
-        <description><![CDATA[Starly available newsletters]]></description>
+        <description><![CDATA[Learning Sessions Available]]></description>
         <atom:link href="https://starly-info.github.io/gen/it/rss.xml" rel="self"
                    type="application/rss+xml" />
         <lastBuildDate>Unknown</lastBuildDate>
