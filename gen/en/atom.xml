@@ -15,7 +15,8 @@
     <id>https://starly-info.github.io/course/en/2017-08-18-vim.html</id>
     <published>2017-08-18T00:00:00Z</published>
     <updated>2017-08-18T00:00:00Z</updated>
-    <summary type="html"><![CDATA[<h1 id="vi-improveds-learning-session">Vi IMproved’s Learning Session</h1>
+    <summary type="html"><![CDATA[<p><img src="https://vim.sourceforge.io/images/vim_editor.gif" alt="image" /></p>
+<h1 id="vi-improveds-learning-session">Vi IMproved’s Learning Session</h1>
 <p><a href="http://www.vim.org/">VIM</a>’s help file (<a href="http://vimdoc.sourceforge.net/htmldoc/uganda.html">license</a>) is the main source of knowledge about VIM and his functionalities. You can access the manual typing :help in <em>NORMAL MODE</em>. If you don’t know what <em>NORMAL MODE</em> is, subscribe and follow along with your daily email. If you do, you will find useful exercises, tips and advance knowledge too. <strong>Join end enjoy your FREE contents!</strong></p>
 <p>Subscribers receive a daily email with:</p>
 <ul>
@@ -30,6 +31,7 @@
 <li>help you digest a very long text one bit of a time.</li>
 </ul>
 <p><em>Do you have any question? Do you find errors? Do you have ideas on how to improve the service? Do you know some tricky questions that could be added to the practice section?</em></p>
+<p>See an <a href="/static/example.html">email preview</a>!</p>
 <p>You are <strong>welcome</strong> to contact me directly!</p>]]></summary>
 </entry>
 
