@@ -34,10 +34,11 @@ main = hakyll $ do
     forM_ Multilang.langs $ \lang -> do
       let slang = show lang
 
-      match ("about*" .||. "tos*" .||. "privacy*")        $ globalBehavior     lang
+      match ("about*" .||. "tos*" .||. "privacy*") $ globalBehavior lang
+      match "static/example.html"                  $ globalBehavior lang
 
-      match (fromGlob $ "index-" ++ slang ++ ".html"   )  $ indexBehavior      lang
-      match (fromGlob $ "course/" ++ slang ++ "/*" )  $ courseBehavior lang
+      match (fromGlob $ "index-"  ++ slang ++ ".html" ) $ indexBehavior   lang
+      match (fromGlob $ "course/" ++ slang ++ "/*"    ) $ courseBehavior  lang
 
       create [fromFilePath ("gen/" ++ slang ++ "/archive.html")] (archiveBehavior          lang)
       create [fromFilePath ("gen/" ++ slang ++ "/rss.xml")]      (feedBehavior renderRss   lang)

@@ -1,3 +1,5 @@
+.. image:: https://vim.sourceforge.io/images/vim_editor.gif
+
 ******************************
 Vi IMproved's Learning Session
 ******************************
@@ -26,5 +28,7 @@ Motivation behind these little pills of Vim knowledge:
 *Do you have any question? Do you find errors? Do you have ideas on how to
 improve the service? Do you know some tricky questions that could be added to
 the practice section?*
+
+See an `email preview </static/example.html>`_!
 
 You are **welcome** to contact me directly!
