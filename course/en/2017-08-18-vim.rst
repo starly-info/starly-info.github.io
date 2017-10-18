@@ -9,7 +9,7 @@ Vi IMproved's Learning Session
 knowledge about VIM and his functionalities. You can access the manual typing
 `:help` in *NORMAL MODE*. If you don't know what *NORMAL MODE* is, subscribe and
 follow along with your daily email. If you do, you will find useful exercises,
-tips and advance knowledge too. **Join end enjoy your FREE contents!**
+tips and advance knowledge too. **Join end enjoy your contents!**
 
 Subscribers receive a daily email with:
 

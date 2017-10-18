@@ -37,6 +37,8 @@ main = hakyll $ do
       match ("about*" .||. "tos*" .||. "privacy*") $ globalBehavior lang
       match "static/example.html"                  $ globalBehavior lang
 
+      match "subscribe*" $ subscribeBehavior lang
+
       match (fromGlob $ "index-"  ++ slang ++ ".html" ) $ indexBehavior   lang
       match (fromGlob $ "course/" ++ slang ++ "/*"    ) $ courseBehavior  lang
 
@@ -145,7 +147,7 @@ courseBehavior l = do
   compile $ pandocCompilerWith withLinkAtt defaultHakyllWriterOptions
       >>= saveSnapshot "content"
       >>= loadAndApplyTemplate (fromFilePath $ "templates/" ++ (show l) ++ "/post.html") (postCtxWithLanguage l)
-      >>= loadAndApplyTemplate "templates/mailchimp.html"                                 defaultContext
+      >>= loadAndApplyTemplate "templates/payments.html"                                  defaultContext
       >>= loadAndApplyTemplate "templates/default.html"                                  (postCtxWithLanguage l)
       >>= applyFilter abbreviationFilter
       >>= relativizeUrls
@@ -161,6 +163,15 @@ globalBehavior l = do
   compile $ pandocCompiler
       >>= loadAndApplyTemplate (fromFilePath $ "templates/" ++ (show l) ++ "/donation.html") (defaultCtxWithLanguage l)
       >>= loadAndApplyTemplate "templates/default.html" (defaultCtxWithLanguage l)
+      >>= applyFilter abbreviationFilter
+      >>= relativizeUrls
+
+subscribeBehavior :: Language -> Rules ()
+subscribeBehavior l = do
+  route   $ setExtension "html"
+  compile $ pandocCompiler
+      >>= loadAndApplyTemplate "templates/mailchimp.html"  defaultContext
+      >>= loadAndApplyTemplate "templates/default.html"		(defaultCtxWithLanguage l)
       >>= applyFilter abbreviationFilter
       >>= relativizeUrls
 
