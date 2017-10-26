@@ -4,31 +4,40 @@
 Vi IMproved's Learning Session
 ******************************
 
-`VIM <http://www.vim.org/>`_'s help file (`license
-<http://vimdoc.sourceforge.net/htmldoc/uganda.html>`_) is the main source of
-knowledge about VIM and his functionalities. You can access the manual typing
-`:help` in *NORMAL MODE*. If you don't know what *NORMAL MODE* is, subscribe and
-follow along with your daily email. If you do, you will find useful exercises,
-tips and advance knowledge too. **Join end enjoy your contents!**
+`VIM <http://www.vim.org/>`_'s help file is the main source of knowledge about
+VIM and his functionalities. This newsletter let you definitely learn this
+**awesome text-editor** throughout *daily* or *weekly* email. Each email has a
+theory section and a practice one. Even if you are an advance VIM user, I am
+sure you will find useful exercises, tips and you will improve your knowledge.
+**Join end enjoy your contents!**
 
-Subscribers receive a daily email with:
+Subscribers receive emails with:
 
-* **Theory**: a portion of the help file;
-* **Practice**: questions to enhance memorization and improve the learning
-  process. *Do you know all the answers?*
-* **Help**: answers to questions.
-
-Motivation behind these little pills of Vim knowledge:
-
-* can be helpful to every user from beginner to advanced;
-* avoid users from reinventing the wheel, write plugins for functionalities
-  already covered;
-* help you digest a very long text one bit of a time.
-
-*Do you have any question? Do you find errors? Do you have ideas on how to
-improve the service? Do you know some tricky questions that could be added to
-the practice section?*
+- **Theory**: a portion of the help file;
+- **Practice**: questions to enhance memorization and improve the learning
+  process.
+- **Help**: answers to questions.
 
 See an `email preview </static/example.html>`_!
 
-You are **welcome** to contact me directly!
+What motivate me to create this service:
+
+- avoid users from reinventing the wheel. Write plugins for functionalities
+  already covered in the core software is time wasted;
+- spread helpful knowledge to every user from beginner to advanced;
+- support Vim;
+- You definitely **MUST** try it! I know.
+
+----
+
+Do You...
+
+- *have any question?*
+- *find typos?*
+- *have ideas on how to improve the service?*
+- *know some tricky questions that could be added to the practice section?*
+
+I am really glad to receive **your feedback**.
+
+Subscribe
+---------
