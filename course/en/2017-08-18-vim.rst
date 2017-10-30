@@ -9,7 +9,7 @@ VIM and his functionalities. This newsletter let you definitely learn this
 **awesome text-editor** throughout *daily* or *weekly* email. Each email has a
 theory section and a practice one. Even if you are an advance VIM user, I am
 sure you will find useful exercises, tips and you will improve your knowledge.
-**Join end enjoy your contents!**
+**Join us end enjoy your contents!**
 
 Subscribers receive emails with:
 
