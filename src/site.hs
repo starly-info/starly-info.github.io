@@ -11,7 +11,7 @@ import        System.FilePath.Posix (takeBaseName, takeDirectory, (</>),
                                       splitFileName)
 
 import        Abbreviations         (abbreviationFilter)
-import        Config                (feedConfig)
+import        Config                (feedConfig, proVersion, freeVersion)
 import        Multilang
 
 --------------------------------------------------------------------------------
@@ -37,7 +37,8 @@ main = hakyll $ do
       match ("about*" .||. "tos*" .||. "privacy*") $ globalBehavior lang
       match "static/example.html"                  $ globalBehavior lang
 
-      match "subscribe*" $ subscribeBehavior lang
+      match "subscribe-free*" $ subscribeBehavior freeVersion lang
+      match "subscribe-pro*"  $ subscribeBehavior proVersion  lang
 
       match (fromGlob $ "index-"  ++ slang ++ ".html" ) $ indexBehavior   lang
       match (fromGlob $ "course/" ++ slang ++ "/*"    ) $ courseBehavior  lang
@@ -63,7 +64,6 @@ applyFilter transformator s = return $ fmap transformator s
 -----------------------------------------------------------------------------{{{
 -- Ctx
 
--- replace mappend with mconcat see src/Hakyll/Web/Feed.hs
 languageContext l = map (\ (k, v) -> constField k v)
                     $ zip (keys Multilang.dbTranslations) $ mapMaybe (Data.Map.lookup l) (elems Multilang.dbTranslations)
 
@@ -83,6 +83,9 @@ postCtxWithLanguage l = mconcat $ [
                                     modificationTimeField "modified" "%d %b %Y",
                                     defaultCtxWithLanguage l
                                   ]
+
+defaultCtxWithVersion :: Context String -> Context String
+defaultCtxWithVersion v = v `mappend` defaultContext
 
 defaultCtxWithLanguage :: Language -> Context String
 defaultCtxWithLanguage l = mconcat $ languageContext l ++ [defaultContext]
@@ -167,14 +170,23 @@ globalBehavior l = do
       >>= applyFilter abbreviationFilter
       >>= relativizeUrls
 
-subscribeBehavior :: Language -> Rules ()
-subscribeBehavior l = do
+subscribeBehavior :: Context String -> Language -> Rules ()
+subscribeBehavior v l = do
   route   $ setExtension "html"
   compile $ pandocCompiler
-      >>= loadAndApplyTemplate "templates/mailchimp.html"  defaultContext
+      >>= loadAndApplyTemplate "templates/mailchimp.html" (defaultCtxWithVersion  v)
       >>= loadAndApplyTemplate "templates/default.html"   (defaultCtxWithLanguage l)
       >>= applyFilter abbreviationFilter
       >>= relativizeUrls
+
+-- subscribeBehavior :: Language -> Rules ()
+-- subscribeBehavior l = do
+--   route   $ setExtension "html"
+--   compile $ pandocCompiler
+--       >>= loadAndApplyTemplate "templates/mailchimp.html"  defaultContext
+--       >>= loadAndApplyTemplate "templates/default.html"   (defaultCtxWithLanguage l)
+--       >>= applyFilter abbreviationFilter
+--       >>= relativizeUrls
 
 archiveBehavior :: Language -> Rules ()
 archiveBehavior language = do

@@ -1,7 +1,10 @@
 module Config where
 
 import Multilang
-import Hakyll (FeedConfiguration(..))
+import Hakyll (FeedConfiguration(..), constField)
+
+proVersion  = constField "version" "865813558f"
+freeVersion = constField "version" "d8c7673dbb"
 
 feedConfig :: Language -> FeedConfiguration
 feedConfig lang = FeedConfiguration
