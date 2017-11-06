@@ -84,8 +84,8 @@ postCtxWithLanguage l = mconcat $ [
                                     defaultCtxWithLanguage l
                                   ]
 
-defaultCtxWithVersion :: Context String -> Context String
-defaultCtxWithVersion v = v `mappend` defaultContext
+defaultCtxWithVersion :: [Context String] -> Context String
+defaultCtxWithVersion v = mconcat $ v ++ [defaultContext]
 
 defaultCtxWithLanguage :: Language -> Context String
 defaultCtxWithLanguage l = mconcat $ languageContext l ++ [defaultContext]
@@ -94,10 +94,10 @@ titleNoDateField :: String -> Context a
 titleNoDateField = mapContext removeDate . pathField
 
 indexCtx l posts = mconcat $ [
-                                titleNoDateField "titleNoDate",
-                                constField "lang" l,
-                                listField "posts" postCtx (return posts),
-                                defaultCtxWithLanguage (Multilang.fromStringToLanguage l)
+                                  titleNoDateField "titleNoDate"
+                                , constField "lang" l
+                                , listField "posts" postCtx (return posts)
+                                , defaultCtxWithLanguage (Multilang.fromStringToLanguage l)
                              ]
 
 removeDate :: String -> String
@@ -170,7 +170,7 @@ globalBehavior l = do
       >>= applyFilter abbreviationFilter
       >>= relativizeUrls
 
-subscribeBehavior :: Context String -> Language -> Rules ()
+subscribeBehavior :: [Context String] -> Language -> Rules ()
 subscribeBehavior v l = do
   route   $ setExtension "html"
   compile $ pandocCompiler
@@ -178,15 +178,6 @@ subscribeBehavior v l = do
       >>= loadAndApplyTemplate "templates/default.html"   (defaultCtxWithLanguage l)
       >>= applyFilter abbreviationFilter
       >>= relativizeUrls
-
--- subscribeBehavior :: Language -> Rules ()
--- subscribeBehavior l = do
---   route   $ setExtension "html"
---   compile $ pandocCompiler
---       >>= loadAndApplyTemplate "templates/mailchimp.html"  defaultContext
---       >>= loadAndApplyTemplate "templates/default.html"   (defaultCtxWithLanguage l)
---       >>= applyFilter abbreviationFilter
---       >>= relativizeUrls
 
 archiveBehavior :: Language -> Rules ()
 archiveBehavior language = do
