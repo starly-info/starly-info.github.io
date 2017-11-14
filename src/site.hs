@@ -11,7 +11,7 @@ import        System.FilePath.Posix (takeBaseName, takeDirectory, (</>),
                                       splitFileName)
 
 import        Abbreviations         (abbreviationFilter)
-import        Config                (feedConfig, proVersion, freeVersion)
+import        Config
 import        Multilang
 
 --------------------------------------------------------------------------------
@@ -26,10 +26,13 @@ main = hakyll $ do
         route   idRoute
         compile $ compressCssCompiler >>= relativizeUrls
 
+    create ["sitemap.xml"] sitemapBehavior
+
+    match "templates/*"         $ compile templateCompiler
+    match "templates/*/*.html"  $ compile templateCompiler
+
     -- Default index page (a version index-LANGUAGE must exist)
     match "index.html" $ indexBehavior English
-
-    create ["sitemap.xml"] sitemapBehavior
 
     forM_ Multilang.langs $ \lang -> do
       let slang = show lang
@@ -40,15 +43,12 @@ main = hakyll $ do
       match "subscribe-free*" $ subscribeBehavior freeVersion lang
       match "subscribe-pro*"  $ subscribeBehavior proVersion  lang
 
-      match (fromGlob $ "index-"  ++ slang ++ ".html" ) $ indexBehavior   lang
-      match (fromGlob $ "course/" ++ slang ++ "/*"    ) $ courseBehavior  lang
+      match (fromGlob $ "index-"  ++ slang ++ ".html"   ) $ indexBehavior   lang
+      match (fromGlob $ "course/" ++ slang ++ "/*vim*"  ) $ courseBehavior  lang vimlyConfig
 
       create [fromFilePath ("gen/" ++ slang ++ "/archive.html")] (archiveBehavior          lang)
       create [fromFilePath ("gen/" ++ slang ++ "/rss.xml")]      (feedBehavior renderRss   lang)
       create [fromFilePath ("gen/" ++ slang ++ "/atom.xml")]     (feedBehavior renderAtom  lang)
-
-    match "templates/*"         $ compile templateCompiler
-    match "templates/*/*.html"  $ compile templateCompiler
 
 
 -----------------------------------------------------------------------------{{{
@@ -69,20 +69,24 @@ languageContext l = map (\ (k, v) -> constField k v)
 
 postCtx :: Context String
 postCtx =
-    titleNoDateField "titleNoDate"                    `mappend`
-    constField "host" "https://starly-info.github.io" `mappend`
-    dateField "created" "%d %b %Y"                    `mappend`
-    modificationTimeField "modified" "%d %b %Y"       `mappend`
+    titleNoDateField "titleNoDate"              `mappend`
+    constField "host" rootHost                  `mappend`
+    dateField "created" "%d %b %Y"              `mappend`
+    modificationTimeField "modified" "%d %b %Y" `mappend`
     defaultContext
 
-postCtxWithLanguage :: Language -> Context String
-postCtxWithLanguage l = mconcat $ [
-                                    titleNoDateField "titleNoDateField",
-                                    constField "host" "https://starly-info.github.io",
-                                    dateField "created" "%d %b %Y",
-                                    modificationTimeField "modified" "%d %b %Y",
-                                    defaultCtxWithLanguage l
-                                  ]
+postCtxWithLanguage :: Language -> CourseMetasConfiguration -> Context String
+postCtxWithLanguage l cmc = mconcat $ [
+                                        constField "host"           rootHost
+                                      , constField "cmctitle"       (cmcTitle cmc)
+                                      , constField "cmcImgCover"    (cmcImgCover cmc)
+                                      , constField "cmcDescription" (cmcDescription cmc)
+                                      , constField "cmcTwitter"     (cmcTwitter cmc)
+                                      , titleNoDateField        "titleNoDateField"
+                                      , dateField "created"     "%d %b %Y"
+                                      , modificationTimeField   "modified" "%d %b %Y"
+                                      , defaultCtxWithLanguage l
+                                      ]
 
 defaultCtxWithVersion :: [Context String] -> Context String
 defaultCtxWithVersion v = mconcat $ v ++ [defaultContext]
@@ -93,11 +97,10 @@ defaultCtxWithLanguage l = mconcat $ languageContext l ++ [defaultContext]
 titleNoDateField :: String -> Context a
 titleNoDateField = mapContext removeDate . pathField
 
-indexCtx l posts = mconcat $ [
-                                  titleNoDateField "titleNoDate"
-                                , constField "lang" l
-                                , listField "posts" postCtx (return posts)
-                                , defaultCtxWithLanguage (Multilang.fromStringToLanguage l)
+indexCtx l posts = mconcat $ [ titleNoDateField "titleNoDate"
+                             , constField "lang" l
+                             , listField "posts" postCtx (return posts)
+                             , defaultCtxWithLanguage (Multilang.fromStringToLanguage l)
                              ]
 
 removeDate :: String -> String
@@ -144,15 +147,14 @@ indexBehavior l = do
           >>= applyFilter abbreviationFilter
           >>= relativizeUrls
 
-courseBehavior :: Language -> Rules ()
-courseBehavior l = do
+courseBehavior :: Language -> CourseMetasConfiguration -> Rules ()
+courseBehavior l cmc = do
   route   $ setExtension "html"
   compile $ pandocCompilerWith withLinkAtt defaultHakyllWriterOptions
       >>= saveSnapshot "content"
-      >>= loadAndApplyTemplate (fromFilePath $ "templates/" ++ (show l) ++ "/post.html") (postCtxWithLanguage l)
-      >>= loadAndApplyTemplate "templates/payments.html"                                  defaultContext
-      >>= loadAndApplyTemplate "templates/facebook.html"                                  defaultContext
-      >>= loadAndApplyTemplate "templates/default.html"                                  (postCtxWithLanguage l)
+      >>= loadAndApplyTemplate "templates/payments.html"  defaultContext
+      >>= loadAndApplyTemplate "templates/facebook.html"  defaultContext
+      >>= loadAndApplyTemplate "templates/default.html"  (postCtxWithLanguage l cmc)
       >>= applyFilter abbreviationFilter
       >>= relativizeUrls
       >>= removeIndexHtml
@@ -201,7 +203,7 @@ sitemapBehavior = do
       posts <- recentFirst =<< loadAllSnapshots (fromGlob $ "course/*/*") "content"
       let ctx = mconcat $ [
                     listField "posts" postCtx (return posts)
-                 ,  constField "host" "https://starly-info.github.io"
+                 ,  constField "host" rootHost
                  ,  defaultContext
                  ]
 
