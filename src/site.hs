@@ -18,7 +18,7 @@ import        Multilang
 main :: IO ()
 main = hakyll $ do
 
-    match "static/img/*" $ do
+    match ("static/img/*" .||. "slide/*") $ do
         route   idRoute
         compile copyFileCompiler
 
