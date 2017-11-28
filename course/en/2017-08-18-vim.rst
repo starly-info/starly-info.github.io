@@ -28,6 +28,13 @@ What motivate me to create this service:
 - support Vim;
 - You definitely **MUST** try it! I know.
 
+
+Talks & Presentations
+---------------------
+
+- `Linux Day (28 October 2017) </slide/linux-day-2017.html>`_
+- `Vimberlin (23 November 2017) </slide/vimberlin.html>`_
+
 ----
 
 Do You...
