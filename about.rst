@@ -1,14 +1,9 @@
 About this site
 ===============
 
-Starly born in order to be psychologically helpful to "*digest*" very long
-readings.
+Subscribers receive weekly or daily emails with a portion of the official manual
+plus (only Pro or Full version) a practice section with questions and exercises.
 
-Subscribers receive periodically an email with only a portion of the document
-that they want to read plus a practice section. Practice helps stick knowledge.
-
-Each subscriber receive (*FREE*) all the materials independently on when he join
-the learning sessions.
-
-The learning sessions can be helpful to every users, from beginner to advance.
-There is always something to learn or dust off from our memories.
+The content is helpful independently from the user experience. The manual has
+both beginner and advance topics and some exercises in the practice session can
+be tricky even for experts.

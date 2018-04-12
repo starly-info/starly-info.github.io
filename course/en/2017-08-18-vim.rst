@@ -1,3 +1,7 @@
+---
+title: Vim
+---
+
 .. image:: https://vim.sourceforge.io/images/vim_editor.gif
 
 ******************************
@@ -9,11 +13,11 @@ VIM and his functionalities. This newsletter let you definitely learn this
 **awesome text-editor** throughout *daily* or *weekly* email. Each email has a
 theory section and a practice one. Even if you are an advance VIM user, I am
 sure you will find useful exercises, tips and you will improve your knowledge.
-**Join us end enjoy your contents!**
+**Join us end enjoy your new way of learning!**
 
 Subscribers receive emails with:
 
-- **Theory**: a portion of the help file;
+- **Theory**: a portion of the official manual (help file);
 - **Practice**: questions to enhance memorization and improve the learning
   process.
 - **Help**: answers to questions.
